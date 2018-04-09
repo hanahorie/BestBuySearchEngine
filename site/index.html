@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html ng-app="Module" >
+<head>
+    <title> BestBuy Stuff </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/AngularScript.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/alasql.js"></script>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            font-family: 'Trebuchet MS';
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #565E8C;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+            form.example button:hover {
+                background: #3F4254;
+            }
+
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        h2 {
+            border-bottom-style: solid;
+            border-bottom-color: #565E8C;
+            border-bottom-width: 6px;
+        }
+
+        .h3 {
+            background-image: url("Images/foggy.jpeg");
+            padding: 15px 0;
+            text-transform: uppercase;
+        }
+
+        .columns {
+            columns: 2;
+        }
+
+        a {
+            color: #7200FF;
+        }
+
+            a:visited {
+                color: #565E8C;
+                text-decoration: none;
+            }
+
+            a:active {
+                color: #000000;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: #000000;
+                text-decoration: none;
+            }
+
+            a:before {
+                color: #565E8C;
+                text-decoration: none;
+            }
+
+        star {
+            color: #FFF244;
+        }
+
+        .dropbtn {
+            background-color: #565E8C;
+            color: white;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            height: 40px;
+            min-width: 160px;
+            vertical-align:;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-image: url("Images/foggy.jpeg");
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #c4c0c0;
+                    border-radius: 15px;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #565E8C;
+        }
+
+        right {
+            position: absolute;
+            right: 0px;
+            padding-right: 50px;
+        }
+
+        /*p.inset {
+            border-style: inset;
+            width: 500px;
+            border-width: 5px;
+        }*/
+
+        /*p.paddingMainButton {
+            padding-right: 350px;
+        }
+
+        p.paddingResultButton {
+            padding-left: 500px;
+        }
+
+        .searchButton {
+            background-color: #2B7FE6;
+            color: white;
+            display: inline-block;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .searchButtonResults {
+            background-color: #2B7FE6;
+            color: white;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+        }*/
+
+        html, body {
+            height: 100%;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            display: table;
+        }
+
+        .midWrapper {
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .insetText {
+            border-style: inset;
+            width: 500px;
+            border-width: 5px;
+        }
+
+
+
+        *{
+            box-sizing:border-box;
+        }
+
+        .column{
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .row:after{
+            content: "";
+            display: table;
+            clear:both;
+        }
+        
+        table, th, td{
+            padding: 90px;
+        }
+
+        
+    </style>
+
+    <link href="projectSearch.html" />
+</head>
+<body ng-controller="Controller">
+
+    <!--<input type="text" ng-model="product" onchange="productChanged();" />
+
+     <div>
+        The product is: {{product}}<br />{{productChanged}}<br /><br />
+    </div>
+
+    <div ng-controller="Controller">
+        <p>
+            The ID: {{thing.seoText}}
+        </p>
+        <p>
+            The Content: {{thing.regularPrice}}
+        </p>
+    </div>-->
+    <!--<p align="right" class="padding"><a class="button" href="projectSearch.html"><font face="Trebuchet MS">Search</font></a></p>-->
+
+    <div class="main">
+
+        <div class="midWrapper" ng-show="!resultView">
+            <font face="Trebuchet MS" size="5"><center><h1>S E A R C H ... <img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:90px; height:70px;"></h1></center></font>
+            <center>
+                <form class="example" style="margin:auto;max-width:700px">
+                    <input type="text" ng-model="productSearchStr" placeholder="Search..."  name="search">
+                    <button ng-click="resultView=true;productSearch(productSearchStr);"><i class="fa fa-search"></i></button>
+                    <!--<p align="right" class="paddingMainButton"><button class="searchButton" ng-click="resultView=true;"><font face="Trebuchet MS">Search</font></button></p>-->
+                </form>
+            </center>
+        </div>
+
+        <div ng-show="resultView">
+            <header>
+                <center><font face="Trebuchet MS" size="4"><h1>S E A R C H...  
+                    <img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:70px; height:55px;"></h1></font></center>
+            </header>
+
+            <form class="example" style="margin:auto;max-width:600px">
+
+                <input type="text" ng-model="productSearchStr" placeholder="Search..."  name="search" >
+                <button ng-click="resultView=true;productSearch(productSearchStr);"><i class="fa fa-search"></i></button>
+
+            </form>
+
+
+            <!--<p class="insetText"><input style="width:496px" type="text" value="{{product}}" /></p>
+        <p align="left" class="paddingResultButton"><button class="searchButton" ng-click="location.href=location.href"><font face="Trebuchet MS">Search</font></button></p>-->
+            <!--onclick="sortBy('salePrice')"-->
+            <header>
+                <font face="Trebuchet MS" size="4"><h2>RESULTS:</h2> </font>
+
+
+                <p>
+                    <div class="h3">
+
+                        &nbsp;&nbsp;
+                        <font face="Trebuchet MS" size="6">{{productSearchStr}}</font>
+
+                        <right>
+                            <div class="dropdown">
+                                <button class="dropbtn">FILTER ▼</button>
+                                <div class="dropdown-content">
+                                    <font size="2">
+                                        <a ng-click="srtByPrice(sp.sortOrder)" ng-repeat="sp in sortProperties.salePrice">{{sp.text}}</a>
+                                        <a ng-click="srtByRating(rate.sortStar)" ng-repeat="rate in sortNumber.customerRating">{{rate.text}}</a>
+
+                                    </font>
+                                </div>
+                            </div>
+                        </right>
+
+                    </div>
+                </p>
+            </header>
+
+            <div>
+
+
+
+
+
+                <!--<p>
+        The ID: {{thing.Brand}}
+    </p>
+    <p>
+        Category: {{thing.productSearchStr[0].categoryName}}
+    </p>
+    <p> Name: {{thing.productSearchStr[0].name}}</p>
+    <p>Regular Price: {{thing.productSearchStr[0].regularPrice}}</p>
+    <p>Sale Price: {{thing.productSearchStr[0].salePrice}}</p>
+    <p>Description: {{thing.productSearchStr[0].shortDescription}}</p>-->
+                <!--<table>
+        <tr ng-repeat="prod in thing.products">
+            <td><p><b>NAME: </b>{{prod.name}}</p></td>
+            <td><b>Price:</b> ${{prod.regularPrice}}</td>
+            <td><img src="{{prod.thumbnailImage}}" style="width:170px;height:200px;"></td>
+        </tr>
+    </table>-->
+              
+                    <table class="row" style="margin-right:70px;margin-left:70px;">
+                        <tr class="column" ng-repeat="prod in displayedProducts.products" style=" margin-top:50px; margin-bottom:50px;">
+                            <td ng-if="$odd">
+
+                                <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
+                                <b><font size="4">PRICE NOW: </font></b>
+                                <font size="6" face="Arial Black">${{prod.salePrice}}</font>
+                                <br />
+                                <font size="3">Reg. Price: </font>
+                                <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp;
+                                <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating &nbsp; ( {{prod.customerRatingCount}} )
+                                <br />
+                                <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
+                            </td>
+                            <td ng-if="$even" style="margin-right:100px;margin-left:100px;">
+                                <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
+                                <b><font size="4">PRICE NOW: </font></b> <font size="6" face="Arial Black">${{prod.salePrice}}</font><br />
+                                <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating &nbsp; ( {{prod.customerRatingCount}} ) <br />
+                                <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                <!--<div class="columns" style="margin-top:50px;">-->
+
+                    <!--<table style="margin-right:100px;margin-left:100px;" width:100%">
+                        <tr ng-repeat="prod in displayedProducts.products">
+                            <td>
+                                <p>
+                                    <br />
+                                    <center><img src="{{prod.thumbnailImage}}" style="width:170px;height:200px;"><br /></center>
+                                    <b><font size="4">PRICE NOW: </font></b> <font size="6" face="Arial Black">${{prod.salePrice}}</font><br />
+                                    <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating <br />
+                                    <font size="4"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font><br />
+                                    <br /><br />
+                                </p>
+                            </td>
+
+                        </tr>
+                    </table>-->
+
+
+
+
+
+
+
+                    <!--<div class="col-sm-3">
+        <center><img src="{{prod.thumbnailImage}}" style="width:170px;height:200px;"><br /></center>
+        <b><font size="4">PRICE NOW: </font></b> <font size="6" face="Arial Black">${{prod.salePrice}}</font><br />
+        <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating <br />
+        <font size="4"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font><br />
+        <br /><br />
+    </div>-->
+
+
+                </div>
+
+
+
+
+
+
+                </div>
+        </div>
+
+
+
+</div>
+</body>
+
+    </html>
