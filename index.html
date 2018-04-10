@@ -252,14 +252,16 @@
     <div class="main" style="padding:20px;">
 
         <div class="midWrapper" ng-show="!resultView">
-            <font face="Trebuchet MS" size="5"><center><h1>S E A R C H ... <img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:90px; height:70px; "></h1></center></font>
-            <form class="example" style="margin:auto;max-width:700px;">
-                <input type="text" ng-model="productSearchStr" placeholder="Search..." style="min-width:200px;">
-                <button ng-click="resultView=true;productSearch(productSearchStr);"><i class="fa fa-search"></i></button>
- 
-                <!--<p align="right" class="paddingMainButton"><button class="searchButton" ng-click="resultView=true;"><font face="Trebuchet MS">Search</font></button></p>-->
-            </form>
-            
+
+            <font face="Trebuchet MS" size="5"><center><h1>S E A R C H...<img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:90px; height:70px;"></h1></center></font>
+            <center>
+                <form class="example" style="margin:auto;max-width:700px">
+                    <input type="text" ng-model="productSearchStr" placeholder="Search..."  name="search">
+                    <button ng-click="resultView=true;productSearch(productSearchStr);"><i class="fa fa-search"></i></button>
+                    <!--<p align="right" class="paddingMainButton"><button class="searchButton" ng-click="resultView=true;"><font face="Trebuchet MS">Search</font></button></p>-->
+                </form>
+            </center>
+
         </div>
 
         <div ng-show="resultView">
@@ -324,6 +326,7 @@
                 <!--<header>
             <font face="Trebuchet MS" size="4"><h2>RESULTS:</h2> </font>
 
+<<<<<<< HEAD
 
             <p>
                 <div class="h3">
@@ -343,6 +346,49 @@
                             </div>
                         </div>
                     </right>
+=======
+                <!--<p>
+        The ID: {{thing.Brand}}
+    </p>
+    <p>
+        Category: {{thing.productSearchStr[0].categoryName}}
+    </p>
+    <p> Name: {{thing.productSearchStr[0].name}}</p>
+    <p>Regular Price: {{thing.productSearchStr[0].regularPrice}}</p>
+    <p>Sale Price: {{thing.productSearchStr[0].salePrice}}</p>
+    <p>Description: {{thing.productSearchStr[0].shortDescription}}</p>-->
+                <!--<table>
+        <tr ng-repeat="prod in thing.products">
+            <td><p><b>NAME: </b>{{prod.name}}</p></td>
+            <td><b>Price:</b> ${{prod.regularPrice}}</td>
+            <td><img src="{{prod.thumbnailImage}}" style="width:170px;height:200px;"></td>
+        </tr>
+    </table>-->
+              
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6" ng-if="$odd" ng-repeat="prod in displayedProducts.products" style=" margin-top:50px; margin-bottom:100px;">
+
+                                <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
+                                <b><font size="4">PRICE NOW: </font></b>
+                                <font size="6" face="Arial Black">${{prod.salePrice}}</font>
+                                <br />
+                                <font size="3">Reg. Price: </font>
+                                <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp;
+                                <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating({{prod.customerRatingCount}})
+                                <br />
+                                <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
+                            </div>
+                            <div class="col-sm-6" ng-if="$even">
+                                <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
+                                <b><font size="4">PRICE NOW: </font></b> <font size="6" face="Arial Black">${{prod.salePrice}}</font><br />
+                                <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating({{prod.customerRatingCount}}) <br />
+                                <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
+                            </div >
+                        </div>
+
+                    </div>
+>>>>>>> 6079ef29b6d28aea0662617756763071f9395679
 
                 </div>
             </p>
