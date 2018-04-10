@@ -239,7 +239,7 @@
             <font face="Trebuchet MS" size="5"><center><h1>S E A R C H...<img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:90px; height:70px;"></h1></center></font>
             <center>
                 <form class="example" style="margin:auto;max-width:700px">
-                    <input type="text" ng-model="productSearchStr" placeholder="Search..."  name="search">
+                    <input type="text" ng-model="productSearchStr" placeholder="Search..."  >
                     <button ng-click="resultView=true;productSearch(productSearchStr);"><i class="fa fa-search"></i></button>
                     <!--<p align="right" class="paddingMainButton"><button class="searchButton" ng-click="resultView=true;"><font face="Trebuchet MS">Search</font></button></p>-->
                 </form>
@@ -276,14 +276,14 @@
                         <font face="Trebuchet MS" size="6">{{productSearchStr}}</font>
 
 
-
+                        
                     </div>
                 </p>
             </header>
             
             <right>
                 <div class="dropdown">
-                    <button class="btn btn-sm dropdown-toggle" style="background-color:#565E8C; color:white; float:right; width:150px; border-radius:25px" data-toggle="dropdown">FILTER &nbsp;  &nbsp; &nbsp;<span class="caret"></span></button>
+                    <button class="btn btn-sm dropdown-toggle" style="background-color:#565E8C; color:white; float:right; width:auto; border-radius:25px" data-toggle="dropdown">FILTER &nbsp;  &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;<span class="caret"></span></button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 
                         <li role="presentation">
