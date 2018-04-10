@@ -253,7 +253,7 @@
     <div class="main">
 
         <div class="midWrapper" ng-show="!resultView">
-            <font face="Trebuchet MS" size="5"><center><h1>S E A R C H ... <img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:90px; height:70px;"></h1></center></font>
+            <font face="Trebuchet MS" size="5"><center><h1>Daniela iz great <img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:90px; height:70px;"></h1></center></font>
             <center>
                 <form class="example" style="margin:auto;max-width:700px">
                     <input type="text" ng-model="productSearchStr" placeholder="Search..."  name="search">
@@ -265,7 +265,7 @@
 
         <div ng-show="resultView">
             <header>
-                <center><font face="Trebuchet MS" size="4"><h1>S E A R C H...  
+                <center><font face="Trebuchet MS" size="4"><h1>i luv her  
                     <img src="Images/2000px-Best_Buy_Logo.svg.png" style="width:70px; height:55px;"></h1></font></center>
             </header>
 
@@ -348,7 +348,7 @@
                             <div class="col-sm-6" ng-if="$even">
                                 <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
                                 <b><font size="4">PRICE NOW: </font></b> <font size="6" face="Arial Black">${{prod.salePrice}}</font><br />
-                                <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating &nbsp; ( {{prod.customerRatingCount}} ) <br />
+                                <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating({{prod.customerRatingCount}}) <br />
                                 <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
                             </div >
                         </div>
