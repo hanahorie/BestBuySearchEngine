@@ -331,9 +331,9 @@
         </tr>
     </table>-->
               
-                    <table class="row" style="margin-right:70px;margin-left:70px;">
-                        <tr class="column" ng-repeat="prod in displayedProducts.products" style=" margin-top:50px; margin-bottom:50px;">
-                            <td ng-if="$odd">
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6" ng-if="$odd" ng-repeat="prod in displayedProducts.products" style=" margin-top:50px; margin-bottom:50px;">
 
                                 <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
                                 <b><font size="4">PRICE NOW: </font></b>
@@ -344,16 +344,16 @@
                                 <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating &nbsp; ( {{prod.customerRatingCount}} )
                                 <br />
                                 <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
-                            </td>
-                            <td ng-if="$even" style="margin-right:100px;margin-left:100px;">
+                            </div>
+                            <div class="col-sm-6" ng-if="$even">
                                 <center><a target="_blank" href="{{prod.highResImage}}"><img src="{{prod.thumbnailImage}}" style="width:190px;height:220px;"><br /> </a></center>
                                 <b><font size="4">PRICE NOW: </font></b> <font size="6" face="Arial Black">${{prod.salePrice}}</font><br />
                                 <font size="3">Reg. Price: </font> <font size="3"><b>${{prod.regularPrice}}</b></font> &nbsp;&nbsp;&nbsp; <star><i class="fa fa-star"></i></star>{{prod.customerRating}} Customer Rating &nbsp; ( {{prod.customerRatingCount}} ) <br />
                                 <font size="4" face="arial"><a style="text-decoration:none;" href="https://www.bestbuy.ca{{prod.productUrl}}" target="_blank">{{prod.name}}</a></font>
-                            </td>
-                        </tr>
+                            </div >
+                        </div>
 
-                    </table>
+                    </div>
 
 
                 <!--<div class="columns" style="margin-top:50px;">-->
